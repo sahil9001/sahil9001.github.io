@@ -6,7 +6,7 @@ export default function AboutSection() {
     <div className="flex flex-col items-center mx-auto gap-12 my-36">
         <div className="flex flex-col gap-6 align-center w-96">
         <p className={`text-center text-5xl font-bold text-black ${abhyaLibre.className} font-bold tracking-tight`}>Sahil Silare</p>
-        <p className={`text-center text-2xl text-gray-600 ${plusJakartaSans.className}`}>27-year-old digital product designer, JavaScript developer and entrepreneur of sorts based in Sydney, Australia.</p>
+        <p className={`text-center text-2xl text-gray-600 ${plusJakartaSans.className}`}>23-year-old software engineer, JavaScript developer and entrepreneur of sorts based in Bengaluru, India.</p>
         </div>
         <div className="flex flex-row items-center gap-4">
             <ArrowIcon/>

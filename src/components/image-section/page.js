@@ -8,6 +8,7 @@ export default function ImageSection() {
         <Image 
         src={imageSahil}
         className="rounded-lg"
+        loading="eager"
         />
         <div className="w-[580px]">
         <p className={`text-black font-light text-2xl text-center ${inter.className}`}>
