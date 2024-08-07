@@ -32,12 +32,14 @@ export default function WorkCard(props) {
                 <div className="aspect-w-1 aspect-h-1 w-full bg-white flex items-center justify-center">
                     <div className="flex flex-col justify-center items-center text-center w-full h-full">
                         <div className="relative w-full h-full">
-                            <Image
-                                src={imgSrc}
-                                layout="fill"
-                                objectFit="contain"  // Or use "cover" based on your requirement
-                                alt="Description of image"
-                            />
+                        <div className="absolute bottom-0 left-0 m-4"> {/* Adjust margins as needed */}
+                <Image
+                    src={imgSrc}
+                    layout="fill"
+                    objectFit="contain" // Or use "cover" based on your requirement
+                    alt="Description of image"
+                />
+                </div>
                         </div>
                     </div>
                 </div>

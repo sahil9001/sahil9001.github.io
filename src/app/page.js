@@ -10,9 +10,13 @@ export default function Home() {
   <>
     <main className="container mx-auto">
     <NavBar/>
+    <section id="about">
       <AboutSection/>
       <ImageSection/>
+      </section>
+<section id="work">
       <WorkSection/>
+      </section>
       <IntroductionSection/>
       <Footer/>
     </main>
