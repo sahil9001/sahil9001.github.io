@@ -1,11 +1,13 @@
-/** @type {import('next').NextConfig} */
+/**
+* @type {import('next').NextConfig}
+*/
 const nextConfig = {
-    output: 'export',
+    output: "export",
     images: {
-      unoptimized: true,
+        loader: "akamai",
+        path: "",
     },
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/sahil9001.github.io' : '',
-    trailingSlash: true,
-  };
-  
-  export default nextConfig;
+    assetPrefix: "./",
+};
+
+export default nextConfig;
