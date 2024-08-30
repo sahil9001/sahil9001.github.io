@@ -1,11 +1,13 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
-    output: 'export',
-    basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
-    assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+    output: "export",
     images: {
       unoptimized: true,
     },
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/sahil9001.github.io' : '',
+    basePath: process.env.NODE_ENV === 'production' ? '/sahil9001.github.io' : '',
   };
   
   export default nextConfig;
