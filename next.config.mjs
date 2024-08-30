@@ -6,8 +6,9 @@ const nextConfig = {
     images: {
       unoptimized: true,
     },
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/sahil9001.github.io' : '',
+    assetPrefix: process.env.NODE_ENV === 'production' ? 'https://sahil9001.github.io' : '',
     basePath: process.env.NODE_ENV === 'production' ? '/sahil9001.github.io' : '',
+    trailingSlash: true,
   };
   
   export default nextConfig;
