@@ -18,7 +18,7 @@ export default function NavBar() {
             </svg>
           </button>
         </div>
-        <ul className="hidden md:flex md:flex-row md:gap-12">
+        {/* <ul className="hidden md:flex md:flex-row md:gap-12">
           <li>
             <a href="#about" className={`text-black text-lg ${abhyaLibre.className}`}>
               About
@@ -39,9 +39,9 @@ export default function NavBar() {
               Contact
             </a>
           </li>
-        </ul>
+        </ul> */}
       </div>
-      <div
+      {/* <div
         className={`fixed inset-0 bg-white z-10 flex flex-col items-center justify-center gap-6 transition-transform transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden`}
@@ -73,7 +73,7 @@ export default function NavBar() {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
     </nav>
   );
 }

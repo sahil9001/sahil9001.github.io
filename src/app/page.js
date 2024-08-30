@@ -14,9 +14,9 @@ export default function Home() {
       <AboutSection/>
       <ImageSection/>
       </section>
-<section id="work">
+{/* <section id="work">
       <WorkSection/>
-      </section>
+      </section> */}
       <IntroductionSection/>
       <Footer/>
     </main>

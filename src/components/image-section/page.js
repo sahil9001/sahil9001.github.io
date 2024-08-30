@@ -13,9 +13,10 @@ export default function ImageSection() {
           loading="eager"
           alt="Sahil Silare"
         />
-      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md text-center">
+      <div className="flex flex-col w-full max-w-sm sm:max-w-md md:max-w-md text-center gap-4">
         <p className={`text-black font-light text-base sm:text-lg md:text-xl ${plusJakartaSans.className}`}>
-          I help companies elevate their experiences through their brand, websites and products by taking their awesome ideas from concept to launch.
+          I love to code & build awesome stuff, check out my <a href="/resume.pdf" 
+  download="resume.pdf"><span className="underline decoration-dotted">resume</span></a>
         </p>
       </div>
     </div>
