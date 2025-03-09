@@ -19,7 +19,7 @@ export default function AboutSection() {
           Sahil Silare
         </p>
         <p className={`text-lg sm:text-xl md:text-2xl text-gray-600 ${plusJakartaSans.className}`}>
-          23-year-old software engineer, JavaScript developer and entrepreneur of sorts based in Bengaluru, India.
+          24-year-old software engineer, JavaScript developer and entrepreneur of sorts based in Bengaluru, India.
         </p>
       </div>
       <div className="flex flex-row items-center gap-4">

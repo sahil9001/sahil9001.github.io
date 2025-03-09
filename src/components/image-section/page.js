@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { inter, abhyaLibre, plusJakartaSans } from "@/fonts/page";
-import ArrowIcon from "@/assets/arrow-icon";
-import imageSahil from '../../assets/IMG_0278.png';
+import { plusJakartaSans } from "@/fonts/page";
+import imageSahil from '../../assets/IMG_0278.jpeg';
 
 export default function ImageSection() {
   return (
@@ -10,7 +9,7 @@ export default function ImageSection() {
           src={imageSahil}
           className="rounded-lg w-full h-auto"
           layout="responsive"
-          loading="eager"
+          loading="lazy"
           alt="Sahil Silare"
         />
       <div className="flex flex-col w-full max-w-sm sm:max-w-md md:max-w-md text-center gap-4">
