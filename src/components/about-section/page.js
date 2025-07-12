@@ -13,35 +13,25 @@ export default function AboutSection() {
     return mailtoLink;
   }
   return (
-    <div className="flex flex-col items-center mx-4 sm:mx-8 md:mx-auto gap-12 my-12 sm:my-24 md:my-36">
-      <div className="flex flex-col gap-6 text-center w-full max-w-xs sm:max-w-md md:max-w-lg">
-        <p className={`text-3xl sm:text-4xl md:text-5xl font-bold text-black ${abhyaLibre.className} tracking-tight`}>
-          Sahil Silare
-        </p>
-        <p className={`text-lg sm:text-xl md:text-2xl text-gray-600 ${plusJakartaSans.className}`}>
-          24-year-old software engineer, JavaScript developer and entrepreneur of sorts based in Bengaluru, India.
-        </p>
+    <section className="w-full flex flex-col items-center justify-center py-32 px-4 md:px-0 bg-white">
+      <div className="flex flex-col gap-8 text-center w-full max-w-2xl">
+        <h1 className={`text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight ${abhyaLibre.className}`}>Sahil Silare</h1>
+        <p className={`text-lg md:text-2xl text-gray-600 font-normal ${plusJakartaSans.className}`}>24-year-old software engineer, JavaScript developer and entrepreneur of sorts based in Bengaluru, India.</p>
       </div>
-      <div className="flex flex-row items-center gap-4">
-      <a href="/resume.pdf" 
-  download="resume.pdf">
-      <div className="flex cursor-pointer flex-row items-center gap-2">
-        <ArrowIcon />
-        <p className={`text-base sm:text-lg md:text-xl text-black font-semibold ${plusJakartaSans.className}`}>
-          Download Resume
-        </p>
+      <div className="flex flex-row items-center gap-6 mt-10">
+        <a href="/resume.pdf" download="resume.pdf">
+          <button className="flex flex-row items-center gap-2 px-6 py-3 rounded-full bg-black text-white font-semibold text-lg shadow-lg hover:bg-gray-800 transition-all duration-150">
+            <ArrowIcon currentColor="#fff" width="18" height="18" />
+            Download Resume
+          </button>
+        </a>
+        <a href={handleGetInTouch()}>
+          <button className="flex flex-row items-center gap-2 px-6 py-3 rounded-full border-2 border-black text-black font-semibold text-lg bg-white shadow-lg hover:bg-gray-100 transition-all duration-150">
+            <ArrowIcon currentColor="#000" width="18" height="18" />
+            Get in touch
+          </button>
+        </a>
       </div>
-      </a>
-      <a href={handleGetInTouch()} >
-      <div className="flex cursor-pointer flex-row items-center gap-2">
-        <ArrowIcon />
-        <p className={`text-base sm:text-lg md:text-xl text-black font-semibold ${plusJakartaSans.className}`}>
-          Get in touch
-        </p>
-      </div>
-      </a>
-      
-      </div>
-    </div>
+    </section>
   );
 }
