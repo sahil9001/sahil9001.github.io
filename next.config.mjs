@@ -7,8 +7,8 @@ const nextConfig = {
     images: {
       unoptimized: true,
     },
-    assetPrefix: 'sahil9001.github.io',
-    basePath: 'sahil9001.github.io',
+    assetPrefix: '/sahil9001.github.io',
+    basePath: '/sahil9001.github.io',
 };
 
 export default nextConfig;
