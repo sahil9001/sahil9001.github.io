@@ -4,13 +4,13 @@ import imageSahil from '../../assets/IMG_0278.jpeg';
 
 export default function ImageSection() {
   return (
-    <section className="w-full flex flex-col items-center justify-center py-12 md:py-24 bg-transparent">
-      <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white flex items-center justify-center">
+    <section className="w-full flex flex-col items-center justify-center bg-transparent">
+      <div className="w-[960px] h-[540px] rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white flex items-center justify-center">
         <Image 
           src={imageSahil}
           className="object-cover w-full h-full"
-          width={256}
-          height={256}
+          width={1920}
+          height={1080}
           alt="Sahil Silare"
           priority
         />
