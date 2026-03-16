@@ -3,21 +3,21 @@ import NavBar from "@/components/navbar/page";
 import ImageSection from "@/components/image-section/page";
 import IntroductionSection from "@/components/introduction-section/page";
 import Footer from "@/components/footer/page";
+import AuroraBackground from "@/components/aurora-background";
+
 export default function Home() {
-  return (      
-  <>
-    <main className="container mx-auto">
-    <NavBar/>
-    <section id="about">
-      <AboutSection/>
-      <ImageSection/>
-      </section>
-{/* <section id="work">
-      <WorkSection/>
-      </section> */}
-      <IntroductionSection/>
-      <Footer/>
-    </main>
+  return (
+    <>
+      <AuroraBackground />
+      <main className="container mx-auto relative z-10">
+        <NavBar />
+        <section id="about">
+          <AboutSection />
+          <ImageSection />
+        </section>
+        <IntroductionSection />
+        <Footer />
+      </main>
     </>
   );
 }
