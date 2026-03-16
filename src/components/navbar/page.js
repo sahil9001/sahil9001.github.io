@@ -80,7 +80,7 @@ export default function NavBar() {
       </div>
       {/* Mobile Nav Drawer */}
       {isOpen && (
-        <div className="fixed inset-0 bg-white/95 dark:bg-black/95 z-40 flex flex-col items-center justify-center gap-8 transition-all md:hidden">
+        <div className="fixed inset-0 bg-white/95 dark:bg-black/95 z-[60] flex flex-col items-center justify-center gap-8 transition-all md:hidden">
           <button onClick={() => setIsOpen(false)} className="absolute top-6 right-6 text-black dark:text-white focus:outline-none">
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
