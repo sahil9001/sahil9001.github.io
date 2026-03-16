@@ -1,14 +1,12 @@
-/**
- * @type {import('next').NextConfig}
- * This config ensures correct asset paths for GitHub Pages static export.
- */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "export",
-    images: {
-      unoptimized: true,
-    },
-    assetPrefix: '',
-    basePath: '',
+  output: "export",
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  assetPrefix: '',
+  basePath: '',
 };
 
 export default nextConfig;
