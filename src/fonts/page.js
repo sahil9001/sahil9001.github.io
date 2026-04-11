@@ -1,5 +1,9 @@
-import { Inter, Abhaya_Libre, Plus_Jakarta_Sans } from "next/font/google";
+// macOS system fonts — no external loading required
+export const newYork  = { className: "font-ny" };      // New York serif — display/headings
+export const sfPro    = { className: "font-sf" };       // SF Pro — body text
+export const sfMono   = { className: "font-sf-mono" };  // SF Mono — labels, metadata, nav
 
-export const inter = Inter({ subsets: ['latin']});
-export const abhyaLibre = Abhaya_Libre({subsets: ['latin'],  weight: '700'});
-export const plusJakartaSans = Plus_Jakarta_Sans({subsets: ['latin']});
+// aliases used by components
+export const cormorant = newYork;
+export const dmMono    = sfMono;
+export const lora      = sfPro;
