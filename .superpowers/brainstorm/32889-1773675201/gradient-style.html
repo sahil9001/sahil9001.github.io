@@ -1,0 +1,56 @@
+<h2>Background Gradient Animation Style</h2>
+<p class="subtitle">Which feel fits the minimal portfolio best? All are subtle and dark-mode aware.</p>
+
+<div class="cards">
+  <div class="card" data-choice="aurora" onclick="toggleSelect(this)">
+    <div class="card-image" style="height:180px;position:relative;overflow:hidden;border-radius:8px;background:#0a0a0a;">
+      <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(120,80,255,0.45) 0%,transparent 70%);top:-80px;left:-60px;animation:blob1 6s ease-in-out infinite alternate;"></div>
+      <div style="position:absolute;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,255,0.35) 0%,transparent 70%);bottom:-60px;right:-40px;animation:blob2 8s ease-in-out infinite alternate;"></div>
+      <div style="position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(255,80,180,0.25) 0%,transparent 70%);top:40px;right:60px;animation:blob3 7s ease-in-out infinite alternate;"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+        <span style="color:#fff;font-size:13px;font-family:sans-serif;letter-spacing:0.05em;opacity:0.7;">Sahil Silare</span>
+      </div>
+      <style>
+        @keyframes blob1{to{transform:translate(40px,30px) scale(1.1)}}
+        @keyframes blob2{to{transform:translate(-30px,-20px) scale(1.15)}}
+        @keyframes blob3{to{transform:translate(20px,40px) scale(0.9)}}
+      </style>
+    </div>
+    <div class="card-body">
+      <h3>A — Aurora / Mesh Blobs</h3>
+      <p>Soft color blobs drift slowly behind content. Purple, blue, pink tones. Popular on Linear, Vercel, Stripe.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="radial" onclick="toggleSelect(this)">
+    <div class="card-image" style="height:180px;position:relative;overflow:hidden;border-radius:8px;background:#0a0a0a;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(100,200,255,0.18) 0%,transparent 70%);animation:pulse 4s ease-in-out infinite alternate;"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+        <span style="color:#fff;font-size:13px;font-family:sans-serif;letter-spacing:0.05em;opacity:0.7;">Sahil Silare</span>
+      </div>
+      <style>
+        @keyframes pulse{from{opacity:0.5;transform:scale(0.97)}to{opacity:1;transform:scale(1.03)}}
+      </style>
+    </div>
+    <div class="card-body">
+      <h3>B — Centered Radial Glow</h3>
+      <p>Single soft glow centered behind the hero text, breathing in and out. Very minimal and focused.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="sweep" onclick="toggleSelect(this)">
+    <div class="card-image" style="height:180px;position:relative;overflow:hidden;border-radius:8px;background:#0a0a0a;">
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(80,60,180,0.3) 0%,transparent 40%,rgba(0,180,160,0.2) 100%);animation:sweep 8s ease-in-out infinite alternate;"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+        <span style="color:#fff;font-size:13px;font-family:sans-serif;letter-spacing:0.05em;opacity:0.7;">Sahil Silare</span>
+      </div>
+      <style>
+        @keyframes sweep{from{background-position:0% 0%}to{background-position:100% 100%}}
+      </style>
+    </div>
+    <div class="card-body">
+      <h3>C — Diagonal Sweep</h3>
+      <p>A slow diagonal gradient shift across the background. Cool indigo to teal. Clean and directional.</p>
+    </div>
+  </div>
+</div>

@@ -1,30 +1,68 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* ─── Light: warm linen + deep navy ─── */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 255, 255, 255;
+  --bg: #f8f5ef;
+  --bg-surface: #eeead8;
+  --border: #cdc9bb;
+  --border-subtle: #dedad0;
+  --text-primary: #080d18;
+  --text-secondary: #6b6775;
+  --accent: #9c7828;
+  --accent-light: #c4963a;
+  --accent-dim: rgba(156, 120, 40, 0.12);
+  --nav-bg: rgba(248, 245, 239, 0.92);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: #FFFFFF;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* ─── Dark: deep midnight navy + platinum ─── */
+.dark {
+  --bg: #07090f;
+  --bg-surface: #0d1018;
+  --border: #191d2b;
+  --border-subtle: #111520;
+  --text-primary: #e4e0d6;
+  --text-secondary: #4e5368;
+  --accent: #c4963a;
+  --accent-light: #d9b46a;
+  --accent-dim: rgba(196, 150, 58, 0.1);
+  --nav-bg: rgba(7, 9, 15, 0.94);
 }
-html {
-  scroll-behavior: smooth;
-}
+
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: var(--background-start-rgb);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: -apple-system, "SF Pro Text", "SF Pro Display", BlinkMacSystemFont, system-ui, sans-serif;
+  transition: background-color 0.4s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  mix-blend-mode: overlay;
 }
+
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+::selection { background: var(--accent-dim); color: var(--accent-light); }
+
+/* macOS system font classes */
+.font-ny      { font-family: "New York", "Georgia", ui-serif, serif; }
+.font-sf      { font-family: -apple-system, "SF Pro Text", BlinkMacSystemFont, system-ui, sans-serif; }
+.font-sf-mono { font-family: "SF Mono", SFMono-Regular, ui-monospace, "Fira Code", "Courier New", monospace; }
+
+/* legacy aliases */
+.font-cormorant { font-family: "New York", "Georgia", ui-serif, serif; }
+.font-dm-mono   { font-family: "SF Mono", SFMono-Regular, ui-monospace, "Courier New", monospace; }
+.font-lora      { font-family: -apple-system, "SF Pro Text", BlinkMacSystemFont, system-ui, sans-serif; }
