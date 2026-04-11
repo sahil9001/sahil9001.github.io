@@ -1,5 +1,5 @@
-import AboutSection from "@/components/about-section/page";
 import NavBar from "@/components/navbar/page";
+import AboutSection from "@/components/about-section/page";
 import ImageSection from "@/components/image-section/page";
 import IntroductionSection from "@/components/introduction-section/page";
 import Footer from "@/components/footer/page";
@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <AuroraBackground />
-      <main className="container mx-auto relative z-10">
+      <main className="relative" style={{ zIndex: 10 }}>
         <NavBar />
         <section id="about">
           <AboutSection />

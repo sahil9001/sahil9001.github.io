@@ -2,8 +2,8 @@ import "./globals.css";
 import Providers from "@/components/providers";
 
 export const metadata = {
-  title: "Sahil's Portfolio",
-  description: "A web developer portfolio",
+  title: "Sahil Silare — Portfolio",
+  description: "Software Developer at Adobe",
 };
 
 export const viewport = {
@@ -13,7 +13,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="dark">
       <body>
         <Providers>{children}</Providers>
       </body>

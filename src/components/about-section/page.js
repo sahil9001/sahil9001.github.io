@@ -1,46 +1,89 @@
-'use client';
-import { abhyaLibre, plusJakartaSans } from "@/fonts/page";
-import ArrowIcon from "@/assets/arrow-icon";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+"use client";
+import { motion } from "framer-motion";
+import { cormorant, dmMono } from "@/fonts/page";
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
+};
+
+const clipReveal = {
+  hidden: { y: "100%", opacity: 0 },
+  show: { y: 0, opacity: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+};
 
 export default function AboutSection() {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const isDark = mounted && resolvedTheme === "dark";
-
-  const handleGetInTouch = () => {
-    const email = 'sahilsilare@gmail.com';
-    const subject = encodeURIComponent('Get in Touch');
-    const body = encodeURIComponent('Hello, I would like to get in touch with you.');
-    return `mailto:${email}?subject=${subject}&body=${body}`;
-  };
-
   return (
-    <section className="w-full flex flex-col items-center justify-center py-32 px-4 md:px-0">
-      <div className="flex flex-col gap-8 text-center w-full max-w-2xl">
-        <h1 className={`text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight ${abhyaLibre.className}`}>Sahil Silare</h1>
-        <p className={`text-lg md:text-2xl text-gray-600 dark:text-gray-300 font-normal ${plusJakartaSans.className}`}>24-year-old software engineer, JavaScript developer and entrepreneur of sorts based in Bengaluru, India.</p>
-      </div>
-      <div className="flex flex-row items-center gap-6 mt-10">
-        <a href="/resume.pdf" download="resume.pdf">
-          <button className="flex flex-row items-center gap-2 px-6 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black font-semibold text-lg shadow-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-150">
-            <ArrowIcon currentColor={isDark ? "#000" : "#fff"} width="18" height="18" />
-            Download Resume
-          </button>
-        </a>
-        <a href={handleGetInTouch()}>
-          <button className="flex flex-row items-center gap-2 px-6 py-3 rounded-full border-2 border-black dark:border-white/40 text-black dark:text-white font-semibold text-lg bg-white dark:bg-transparent shadow-lg hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-150">
-            <ArrowIcon currentColor={isDark ? "#fff" : "#000"} width="18" height="18" />
-            Get in touch
-          </button>
-        </a>
-      </div>
+    <section className="min-h-screen flex flex-col justify-center pt-36 pb-24 px-8 md:px-14 relative overflow-hidden">
+      <motion.div variants={container} initial="hidden" animate="show" className="max-w-7xl mx-auto w-full">
+
+        <motion.div variants={fadeUp} className={`${dmMono.className} flex items-center gap-3 mb-10`} style={{ color: "var(--accent)" }}>
+          <span className="inline-block h-px w-8" style={{ background: "var(--accent)" }} />
+          <span className="text-xs tracking-[0.32em] uppercase">Portfolio · 2024</span>
+        </motion.div>
+
+        <div>
+          <div className="overflow-hidden">
+            <motion.h1
+              variants={clipReveal}
+              className={`${cormorant.className} font-light leading-[0.88] tracking-[-0.02em]`}
+              style={{ fontSize: "clamp(4.5rem, 13vw, 11rem)", color: "var(--text-primary)" }}
+            >
+              Sahil
+            </motion.h1>
+          </div>
+          <div className="overflow-hidden">
+            <motion.h1
+              variants={clipReveal}
+              className={`${cormorant.className} font-light leading-[0.88] tracking-[-0.02em] italic`}
+              style={{ fontSize: "clamp(4.5rem, 13vw, 11rem)", color: "var(--accent)" }}
+            >
+              Silare.
+            </motion.h1>
+          </div>
+        </div>
+
+        <motion.div
+          variants={{ hidden: { scaleX: 0, opacity: 0 }, show: { scaleX: 1, opacity: 1, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } } }}
+          className="mt-10 mb-7 h-px w-full origin-left"
+          style={{ background: "var(--border)" }}
+        />
+
+        <motion.div
+          variants={fadeUp}
+          className={`${dmMono.className} flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 text-xs tracking-[0.2em] uppercase`}
+          style={{ color: "var(--text-secondary)" }}
+        >
+          <span>Software Developer · Adobe</span>
+          <span>Raipur, India</span>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.6, duration: 0.8 }}
+        className={`${dmMono.className} absolute bottom-10 left-8 md:left-14 flex items-center gap-3 text-xs tracking-[0.22em] uppercase`}
+        style={{ color: "var(--text-secondary)" }}
+      >
+        <motion.span animate={{ y: [0, 5, 0] }} transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}>↓</motion.span>
+        <span>Scroll</span>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 0.6 }}
+        className={`${dmMono.className} absolute bottom-10 right-8 md:right-14 text-xs tracking-[0.22em] uppercase`}
+        style={{ color: "var(--border)" }}
+      >
+        01 / 01
+      </motion.div>
     </section>
   );
 }

@@ -1,69 +1,54 @@
 "use client";
-import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 export default function AuroraBackground() {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const opacity = mounted && resolvedTheme === "dark" ? 0.4 : 0.15;
-
-  const blobs = [
-    {
-      color: "rgba(120,80,255,1)",
-      size: 600,
-      initial: { x: -100, y: -150 },
-      animate: { x: [-100, -60, -100], y: [-150, -110, -150] },
-      duration: 9,
-    },
-    {
-      color: "rgba(0,180,255,1)",
-      size: 500,
-      initial: { x: "60vw", y: "50vh" },
-      animate: { x: ["60vw", "55vw", "60vw"], y: ["50vh", "40vh", "50vh"] },
-      duration: 11,
-    },
-    {
-      color: "rgba(255,80,180,1)",
-      size: 400,
-      initial: { x: "30vw", y: "20vh" },
-      animate: { x: ["30vw", "35vw", "30vw"], y: ["20vh", "30vh", "20vh"] },
-      duration: 8,
-    },
-  ];
-
   return (
     <div
-      className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
+      className="fixed inset-0 pointer-events-none overflow-hidden"
+      style={{ zIndex: 0 }}
       aria-hidden="true"
     >
-      {blobs.map((blob, i) => (
-        <motion.div
-          key={i}
-          initial={blob.initial}
-          animate={blob.animate}
-          transition={{
-            duration: blob.duration,
-            repeat: Infinity,
-            repeatType: "mirror",
-            ease: "easeInOut",
-          }}
-          style={{
-            position: "absolute",
-            width: blob.size,
-            height: blob.size,
-            borderRadius: "50%",
-            background: blob.color,
-            filter: "blur(80px)",
-            opacity: opacity,
-          }}
-        />
-      ))}
+      {/* Dot grid */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(196,150,58,0.25) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+      {/* Central glow — gold tint */}
+      <div
+        className="absolute"
+        style={{
+          top: "20%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "60vw",
+          height: "60vw",
+          background: "radial-gradient(ellipse at center, var(--accent-dim) 0%, transparent 68%)",
+          borderRadius: "50%",
+        }}
+      />
+      {/* Secondary glow — blue tint for navy depth */}
+      <div
+        className="absolute"
+        style={{
+          top: "70%",
+          left: "75%",
+          transform: "translate(-50%, -50%)",
+          width: "40vw",
+          height: "40vw",
+          background: "radial-gradient(ellipse at center, rgba(30, 50, 120, 0.08) 0%, transparent 70%)",
+          borderRadius: "50%",
+        }}
+      />
+      {/* Bottom fade */}
+      <div
+        className="absolute bottom-0 left-0 right-0"
+        style={{
+          height: "16rem",
+          background: "linear-gradient(to top, var(--bg), transparent)",
+        }}
+      />
     </div>
   );
 }
